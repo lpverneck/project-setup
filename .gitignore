@@ -20,6 +20,12 @@ data/**
 # keep also the example dataset
 !data/01_raw/*
 
+# ignore kedro viz files
+.viz/
+
+# ignore session store
+session_store.db
+
 
 ##########################
 # Common files

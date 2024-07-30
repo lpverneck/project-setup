@@ -2,6 +2,13 @@
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.kedro]
+package_name = "moonlight"
+project_name = "moonlight"
+kedro_init_version = "0.19.6"
+example_pipeline = "False"
+source_dir = "src"
+
 [tool.poetry]
 name = "moonlight"
 version = "0.1.0"
@@ -18,17 +25,43 @@ moonlight = "moonlight.__main__:main"
 [tool.poetry.dependencies]
 python = "^3.12"
 python-dotenv = "^1.0.1"
+kedro = "^0.19.6"
+kedro-viz = "^9.2.0"
+kedro-datasets = {extras = ["pandas-csvdataset"], version = "^4.0.0"}
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.8.0"
 ruff = "^0.5.5"
 isort = "^5.13.2"
+pytest = "^8.3.2"
+pytest-cov = "^5.0.0"
+pytest-mock = "^3.14.0"
+flake8 = "^7.1.0"
+setuptools = "^72.1.0"
 
 [tool.ruff]
-line-length = 88
+line-length = 79
 show-fixes = true
+ignore = ["E501"]
 # select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
-# ignore = [ "E501",]
 
 [tool.ruff.format]
 docstring-code-format = true
+
+[tool.isort]
+profile = "black"
+line_length = 79
+multi_line_output = 3
+include_trailing_comma = true
+
+# [tool.flake8]
+# max-complexity = 10
+# max-line-length = 79
+# extend-ignore = """
+#         E501,
+#     """
+# exclude = ".env"
+# ignore = ["E501"]
+# E501: Line too long
+# W503: Line break occurred before binary operator
+# E226: Missing white space around arithmetic operator

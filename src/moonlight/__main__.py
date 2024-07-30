@@ -1,6 +1,7 @@
 """moonlight file for ensuring the package is executable
 as `moonlight` and `python -m moonlight`
 """
+
 import importlib
 from pathlib import Path
 
