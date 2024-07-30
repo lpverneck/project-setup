@@ -43,6 +43,7 @@ setuptools = "^72.1.0"
 line-length = 79
 show-fixes = true
 ignore = ["E501"]
+extend-include = ["*.ipynb"]
 # select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
 
 [tool.ruff.format]
